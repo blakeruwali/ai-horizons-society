@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logo Concepts</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#14213d; --paper:#f7f4ee; --accent:#c2541b; --sun:#e8894a; --line:#d6cdbb; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter, system-ui, sans-serif; padding:32px; }
+  h1 { font-family:Fraunces, Georgia, serif; font-size:28px; margin:0 0 4px; }
+  .sub { color:#4a5570; margin:0 0 28px; font-size:14px; }
+  .grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; }
+  .card { border:1px solid var(--line); border-radius:8px; overflow:hidden; background:#fff; }
+  .label { padding:12px 16px; font-weight:600; font-size:14px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; }
+  .label span { font-weight:500; color:#4a5570; }
+  .row { display:flex; }
+  .pane { flex:1; display:flex; align-items:center; gap:14px; padding:28px 20px; }
+  .pane.dark { background:var(--ink); color:var(--paper); }
+  .word { line-height:1; }
+  .word b { display:block; font-family:Fraunces, Georgia, serif; font-weight:600; font-size:26px; letter-spacing:-0.01em; }
+  .word i { display:block; font-style:normal; font-size:10.5px; letter-spacing:0.32em; font-weight:600; margin-top:6px; opacity:.75; }
+  .sizes { display:flex; align-items:flex-end; gap:14px; padding:12px 16px; border-top:1px solid var(--line); font-size:12px; color:#4a5570; }
+</style>
+</head>
+<body>
+<h1>AI Horizons Society: logo concepts</h1>
+<p class="sub">Four directions, each shown on light, on dark, and at favicon sizes (32 / 16 px). Pick one or mix.</p>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <!-- A: Sunrise. Sun on the horizon with rays ending in nodes -->
+    <symbol id="m-a" viewBox="0 0 64 64">
+      <path d="M14 42 A18 18 0 0 1 50 42 Z" fill="#c2541b"/>
+      <g stroke-width="3" stroke-linecap="round" stroke="currentColor">
+        <line x1="4" y1="42" x2="60" y2="42"/>
+        <line x1="32" y1="18" x2="32" y2="10"/>
+        <line x1="15" y1="25" x2="10" y2="20"/>
+        <line x1="49" y1="25" x2="54" y2="20"/>
+      </g>
+      <g fill="currentColor"><circle cx="32" cy="8" r="3"/><circle cx="8.5" cy="18.5" r="3"/><circle cx="55.5" cy="18.5" r="3"/></g>
+    </symbol>
+    <!-- B: A-monogram. The letter A whose crossbar is the horizon -->
+    <symbol id="m-b" viewBox="0 0 64 64">
+      <path d="M24 42 A8 8 0 0 1 40 42 Z" fill="#c2541b"/>
+      <g stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="currentColor">
+        <polyline points="12,56 32,8 52,56"/>
+      </g>
+      <line x1="2" y1="42" x2="62" y2="42" stroke-width="3" stroke-linecap="round" stroke="currentColor"/>
+    </symbol>
+    <!-- C: Horizon rings. Expanding arcs above a line -->
+    <symbol id="m-c" viewBox="0 0 64 64">
+      <path d="M22 44 A10 10 0 0 1 42 44 Z" fill="#c2541b"/>
+      <g fill="none" stroke-width="3.5" stroke-linecap="round">
+        <path d="M14 44 A18 18 0 0 1 50 44" stroke="#e8894a"/>
+        <path d="M6 44 A26 26 0 0 1 58 44" stroke="currentColor"/>
+      </g>
+      <line x1="2" y1="52" x2="62" y2="52" stroke-width="3" stroke-linecap="round" stroke="currentColor"/>
+    </symbol>
+    <!-- D: Network sun. Connected nodes forming a rising half-circle -->
+    <symbol id="m-d" viewBox="0 0 64 64">
+      <g stroke-width="2" stroke="currentColor" stroke-linecap="round">
+        <line x1="32" y1="44" x2="10" y2="44"/><line x1="32" y1="44" x2="13" y2="33"/>
+        <line x1="32" y1="44" x2="21" y2="25"/><line x1="32" y1="44" x2="32" y2="22"/>
+        <line x1="32" y1="44" x2="43" y2="25"/><line x1="32" y1="44" x2="51" y2="33"/>
+        <line x1="32" y1="44" x2="54" y2="44"/>
+        <polyline fill="none" points="10,44 13,33 21,25 32,22 43,25 51,33 54,44"/>
+      </g>
+      <g fill="currentColor">
+        <circle cx="10" cy="44" r="3"/><circle cx="13" cy="33" r="3"/><circle cx="21" cy="25" r="3"/>
+        <circle cx="43" cy="25" r="3"/><circle cx="51" cy="33" r="3"/><circle cx="54" cy="44" r="3"/>
+      </g>
+      <circle cx="32" cy="22" r="4" fill="#c2541b"/>
+      <circle cx="32" cy="44" r="5" fill="#c2541b"/>
+      <line x1="2" y1="52" x2="62" y2="52" stroke-width="3" stroke-linecap="round" stroke="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="grid" id="grid"></div>
+
+<script>
+  const concepts = [
+    ["m-a", "A · Sunrise", "sun on the horizon, rays end in nodes"],
+    ["m-b", "B · A-monogram", "the A's crossbar is the horizon"],
+    ["m-c", "C · Horizon rings", "widening arcs, a quiet sunrise"],
+    ["m-d", "D · Network sun", "connected nodes rising over the line"],
+  ];
+  const grid = document.getElementById("grid");
+  const mark = (id, s) => `<svg width="${s}" height="${s}" aria-hidden="true"><use href="#${id}"/></svg>`;
+  const lockup = () => `<div class="word"><b>AI Horizons</b><i>SOCIETY</i></div>`;
+  for (const [id, name, note] of concepts) {
+    const card = document.createElement("article");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="label">${name}<span>${note}</span></div>
+      <div class="row">
+        <div class="pane">${mark(id, 56)}${lockup()}</div>
+        <div class="pane dark">${mark(id, 56)}${lockup()}</div>
+      </div>
+      <div class="sizes">${mark(id, 32)}${mark(id, 16)}<span>favicon sizes</span></div>`;
+    grid.appendChild(card);
+  }
+</script>
+</body>
+</html>

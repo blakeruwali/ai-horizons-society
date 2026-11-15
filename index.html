@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Horizons Society</title>
+<meta name="description" content="AI Horizons Society is a nonprofit that meets monthly. [DRAFT — mission line pending]">
+<meta name="robots" content="noindex">
+<link rel="icon" href="logos/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14213d;
+    --ink-soft: #4a5570;
+    --paper: #f7f4ee;
+    --paper-deep: #ece6da;
+    --line: #d6cdbb;
+    --accent: #c2541b;
+    --horizon-a: #f2b880;
+    --horizon-b: #c2541b;
+    --todo-bg: #fff4c2;
+    --todo-line: #d9a400;
+    --font-display: "Fraunces", Georgia, serif;
+    --font-body: "Inter", system-ui, sans-serif;
+    --space-section: clamp(3.5rem, 2.5rem + 5vw, 7rem);
+    --measure: 38rem;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+    line-height: 1.65;
+  }
+  a { color: var(--accent); text-underline-offset: 0.2em; }
+  a:hover { color: var(--ink); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1rem; }
+  @media (min-width: 48rem) { .wrap { padding: 0 2rem; } }
+
+  .draft-bar {
+    background: var(--ink); color: var(--paper);
+    font-size: 0.8125rem; text-align: center; padding: 0.5rem 1rem;
+  }
+  .todo {
+    background: var(--todo-bg);
+    border: 1px dashed var(--todo-line);
+    border-radius: 3px;
+    padding: 0.05em 0.35em;
+    font-style: normal;
+  }
+  .todo-block {
+    background: var(--todo-bg);
+    border: 1px dashed var(--todo-line);
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    color: var(--ink-soft);
+  }
+
+  header.site { padding: 1.5rem 0; }
+  .brand { display: flex; align-items: center; gap: 0.75rem; font-weight: 600; letter-spacing: 0.01em; }
+  .brand svg { flex: none; }
+
+  .hero { padding: clamp(3rem, 2rem + 6vw, 7rem) 0 var(--space-section); position: relative; overflow: hidden; }
+  .hero-horizon {
+    position: absolute; left: 50%; bottom: -55vw; width: 140vw; height: 80vw;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(closest-side, var(--horizon-a), var(--horizon-b) 60%, transparent 72%);
+    opacity: 0.22; pointer-events: none;
+  }
+  .eyebrow { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin: 0 0 1.25rem; }
+  h1 {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: clamp(2.75rem, 1.5rem + 6vw, 6rem);
+    line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 1.5rem; max-width: 14ch;
+  }
+  .lede { font-size: clamp(1.125rem, 1rem + 0.6vw, 1.375rem); max-width: var(--measure); color: var(--ink-soft); margin: 0 0 2rem; position: relative; }
+
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 600;
+    background: var(--ink); color: var(--paper);
+    padding: 0.85rem 1.4rem; border-radius: 999px;
+    transition: transform 150ms ease, background-color 150ms ease;
+  }
+  .btn:hover { background: var(--accent); color: var(--paper); transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+
+  section { padding: var(--space-section) 0; border-top: 1px solid var(--line); }
+  .grid { display: grid; gap: 2rem; }
+  @media (min-width: 48rem) { .grid { grid-template-columns: 16rem 1fr; gap: 4rem; } }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem); line-height: 1.1; margin: 0; }
+  .body > * { max-width: var(--measure); }
+  .body p:first-child { margin-top: 0; }
+
+  .meeting {
+    background: var(--paper-deep); border-radius: 6px; padding: 1.5rem;
+    display: grid; gap: 1rem;
+  }
+  @media (min-width: 40rem) { .meeting { grid-template-columns: repeat(3, 1fr); } }
+  .meeting dt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); font-weight: 600; }
+  .meeting dd { margin: 0.25rem 0 0; font-weight: 500; }
+
+  footer { border-top: 1px solid var(--line); padding: 2rem 0 3rem; font-size: 0.875rem; color: var(--ink-soft); }
+  footer p { margin: 0.25rem 0; }
+
+  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+</style>
+</head>
+<body>
+  <div class="draft-bar" role="note">Draft for review. Yellow dashed boxes are placeholders awaiting Blake's answers. Not published.</div>
+
+  <header class="site">
+    <div class="wrap brand">
+      <img src="logos/sunrise-mark-light.svg" width="40" height="40" alt="">
+      <span>AI Horizons Society</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-heading" style="border-top:0">
+      <div class="hero-horizon" aria-hidden="true"></div>
+      <div class="wrap">
+        <p class="eyebrow">A nonprofit community</p>
+        <h1 id="hero-heading">AI Horizons Society</h1>
+        <p class="lede"><span class="todo">[Mission: one or two sentences on what the society exists to do]</span></p>
+        <a class="btn" href="#join">Join a monthly meeting</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="about-heading">
+      <div class="wrap grid">
+        <h2 id="about-heading">About</h2>
+        <div class="body">
+          <p>AI Horizons Society is a nonprofit organization incorporated in Delaware. Members meet once a month.</p>
+          <p><span class="todo">[Who it is for, e.g. the audience the meetings serve]</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="meet-heading">
+      <div class="wrap grid">
+        <h2 id="meet-heading">Monthly meeting</h2>
+        <div class="body">
+          <dl class="meeting">
+            <div><dt>When</dt><dd><span class="todo">[e.g. second Tuesday, 7 pm]</span></dd></div>
+            <div><dt>Where</dt><dd><span class="todo">[in person / online]</span></dd></div>
+            <div><dt>Who</dt><dd><span class="todo">[open to all / members]</span></dd></div>
+          </dl>
+          <p class="todo-block">[What happens at a meeting, and any other program running today. Only real, current activities go here.]</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" aria-labelledby="join-heading">
+      <div class="wrap grid">
+        <h2 id="join-heading">Get in touch</h2>
+        <div class="body">
+          <p>To come to a meeting or ask a question, write to <span class="todo">[contact email or sign-up link]</span>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; 2026 AI Horizons Society, a Delaware nonprofit corporation.</p>
+      <p><span class="todo">[Optional: "Founded by Blake Ruwali" linking to blakeruwali.com]</span></p>
+    </div>
+  </footer>
+</body>
+</html>
